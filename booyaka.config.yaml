@@ -6,7 +6,7 @@ server:
 theme: "default"
 metadata:
   title: "Carne JavaScript Runtime"
-  url: openpeeps.github.io/carne
+  url: getcarne.github.io/docs
   description: "Documentation for Carne, a JavaScript runtime based on JavaScriptCore and Nim."
   keywords: ["carne", "javascript", "runtime", "nim", "documentation"]
 appearance:
