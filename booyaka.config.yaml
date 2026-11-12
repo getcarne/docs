@@ -7,7 +7,7 @@ theme: "default"
 metadata:
   title: "Carne JavaScript Runtime"
   url: getcarne.github.io/docs
-  logo: "/assets/carne_logo.png"
+  logo: "/assets/carne@2x.png"
   description: "Documentation for Carne, a JavaScript runtime based on JavaScriptCore and Nim."
   keywords: ["carne", "javascript", "runtime", "nim", "documentation"]
 appearance:
