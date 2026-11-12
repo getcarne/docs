@@ -13,3 +13,4 @@ keywords: ["carne", "text", "markup", "css", "diff"]
 | [SVG](text/svg) | SVG parsing |
 | [QR](text/qr) | QR code generation |
 | [Colors](text/colors) | Color parsing, formatting and math |
+| [Strings](text/str) | String utilities: search, case, wrap, validators |

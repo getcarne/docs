@@ -13,3 +13,8 @@ keywords: ["carne", "libraries", "utilities"]
 | [Mimetype](libraries/mimetype) | MIME type lookup |
 | [Benchmark](libraries/benchmark) | In-process microbenchmarking |
 | [UUID](libraries/uuid) | UUID generation and inspection |
+| [Archive](libraries/archive) | Tar/zip/rar + gzip/zlib/lz4/bzip2/brotli |
+| [NanoID](libraries/nanoid) | URL-friendly unique IDs |
+| [URL](libraries/url) | URL parsing, formatting, percent-encoding |
+| [Watcher](libraries/watcher) | File watching with event callbacks |
+| [Terminal](libraries/terminal) | Styling, terminal I/O, CLI arg parsing |
