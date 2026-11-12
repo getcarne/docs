@@ -103,6 +103,10 @@ sidebar_navigation:
         url: "/networking/http-server"
       - title: "WebSocket"
         url: "/networking/ws"
+      - title: "TCP"
+        url: "/networking/tcp"
+      - title: "UDP"
+        url: "/networking/udp"
   - name: "Data Formats"
     items:
       - title: "Overview"
@@ -149,6 +153,8 @@ sidebar_navigation:
         url: "/text/qr"
       - title: "Colors"
         url: "/text/colors"
+      - title: "Strings"
+        url: "/text/str"
   - name: "Database"
     items:
       - title: "Overview"
@@ -156,6 +162,8 @@ sidebar_navigation:
         icon: "icon-book"
       - title: "SQL Validator"
         url: "/database/sql"
+      - title: "DB driver & ORM"
+        url: "/database/db"
   - name: "Libraries"
     items:
       - title: "Overview"
@@ -174,6 +182,16 @@ sidebar_navigation:
         url: "/libraries/benchmark"
       - title: "UUID"
         url: "/libraries/uuid"
+      - title: "Archive"
+        url: "/libraries/archive"
+      - title: "NanoID"
+        url: "/libraries/nanoid"
+      - title: "URL"
+        url: "/libraries/url"
+      - title: "Watcher"
+        url: "/libraries/watcher"
+      - title: "Terminal"
+        url: "/libraries/terminal"
 
 extra_sections:
   left_sidebar:
