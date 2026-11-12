@@ -21,13 +21,14 @@ failing run exits non-zero; passing output looks like:
 
 ```text
 # tests/local.test.js
-ok - local basic write/read/exists
+[ok] local basic write/read/exists
 pass 1/1 tests
 Success: pass 1/1 files
 ```
 
-Failures print as `fail - <name>` with the message indented below, followed
-by a `fail x/y tests` summary. With no arguments and no `tests/` directory
+Failures print as `[failed] <name>` with the message indented below,
+followed by a `fail x/y tests` summary. Statuses are green/red on TTYs
+(plain on pipes). With no arguments and no `tests/` directory
 (or no `*.test.js` files in it), `carne test` reports that instead of
 passing silently.
 
