@@ -124,6 +124,8 @@ sidebar_navigation:
         url: "/data-formats/csv"
       - title: "XML"
         url: "/data-formats/xml"
+      - title: "HTML"
+        url: "/data-formats/html"
       - title: "vCard"
         url: "/data-formats/vcard"
       - title: "Feed"

@@ -6,11 +6,12 @@ keywords: ['carne', 'javascript', 'std', 'css']
 
 # CSS
 
-CSS parsing and declaration validation
+CSS parsing, validation and serialization
 
 ```js
 const css = require("std/css");
 console.log(css.parse("a { color: red; }").rules.length); // 1
+console.log(css.stringify(css.parse("a { color: red; }"))); // "a {\n  color: red;\n}\n"
 console.log(css.validate("a { color: red; bogus: 1; }"));
 // [{property: "bogus", valid: false, errors: [...]}] ([] when clean)
 ```
@@ -23,6 +24,15 @@ console.log(css.validate("a { color: red; bogus: 1; }"));
 ```js
 const css = require("std/css");
 css.parse("example");
+```
+
+## css.stringify
+
+`css.stringify({rules: [...]}) -> string`
+
+```js
+const css = require("std/css");
+css.stringify("example");
 ```
 
 ## css.validate
