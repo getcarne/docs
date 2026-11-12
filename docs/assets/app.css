@@ -370,13 +370,14 @@ mark {
 .navbar-brand {
   border: none;
   background-color: transparent;
+  padding:0 5px;
   position: relative;
 }
 
 .navbar-brand img {
   /* width: 150px; */
-  width: var(--booyaka-brand-size);
-  height: var(--booyaka-brand-size);
+  width: 100px;
+  height: 50px;
   position:relative;
   z-index: 1;
 }
@@ -386,8 +387,8 @@ mark {
   position: absolute;
   top: 0;
   left: 0;
-  height: var(--booyaka-brand-glow);
-  width: var(--booyaka-brand-glow);
+  height: 25px;
+  width: 100%;
   overflow: hidden;
   border-radius: var(--booyaka-radius-xxl);
   bottom: 0;
@@ -403,7 +404,7 @@ mark {
   left: 0;
   right: 0;
   height: var(--booyaka-brand-glow);
-  width: var(--booyaka-brand-glow);
+  width: 100%;
   margin: auto;
   background-color: var(--booyaka-brand-core);
   z-index: -1
@@ -534,7 +535,6 @@ mark {
     transform: rotate(360deg);
   }
 }
-
 
 .alert p {
   font-size: var(--booyaka-text-nav);
