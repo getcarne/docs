@@ -14,6 +14,7 @@ and npm-style sources.
 ## Commands
 
 ```text
+carne pkg init [dir]
 carne pkg install <spec>
 carne pkg remove <name> [ver]
 carne pkg update [name]
@@ -23,6 +24,28 @@ carne pkg prune
 carne pkg refresh
 carne pkg publish [opts]
 ```
+
+## Scaffolding a package
+
+```text
+carne pkg init              # wizard in the current directory (must be empty)
+carne pkg init <dir>        # wizard into ./<dir>/ (created when missing)
+carne pkg init -Y [dir]     # skip the wizard, scaffold with defaults
+```
+
+The wizard asks for the package name (lowercase, validated before anything
+is written), a semver version, description, author (defaults to the git user
+name), license and keywords. `-Y` / `--yes` takes the git author, `0.1.0`,
+`MIT` and `["carne"]` keywords with no prompts; without it, stdin must be a
+TTY. An existing `package.json` is never overwritten.
+
+The scaffold writes:
+
+- `package.json` — name, version, description, license, keywords, `main`
+- `index.js` — a documented `hello` starter
+- `tests/<name>.test.js` — a `std/test` starter, found by `carne test`
+
+See the [Testing](testing) page for the test runner and matchers.
 
 ## Installing from git
 

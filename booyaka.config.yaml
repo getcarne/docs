@@ -90,6 +90,8 @@ sidebar_navigation:
         url: "/installation"
       - title: "Package manager"
         url: "/package-manager"
+      - title: "Testing"
+        url: "/testing"
   - name: "Networking"
     items:
       - title: "Overview"
