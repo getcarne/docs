@@ -4,8 +4,6 @@ description: "iCalendar parsing and serialization."
 keywords: ['carne', 'javascript', 'std', 'ical', 'calendar']
 ---
 
-# iCalendar
-
 iCalendar parsing and serialization
 
 ```js

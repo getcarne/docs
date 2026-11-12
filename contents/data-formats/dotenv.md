@@ -4,8 +4,6 @@ description: ".env file parsing and loading."
 keywords: ['carne', 'javascript', 'std', 'dotenv', 'env']
 ---
 
-# Dotenv
-
 `.env` file parsing
 
 ```js

@@ -4,8 +4,6 @@ description: "XML parsing and serialization."
 keywords: ['carne', 'javascript', 'std', 'xml']
 ---
 
-# XML
-
 XML parsing and serialization. Elements map to `{tag, attrs, children}`. Comments, prologs and doctypes
 are dropped on parse.
 

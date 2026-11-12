@@ -4,8 +4,6 @@ description: "SQL parsing and validation."
 keywords: ['carne', 'javascript', 'std', 'sql', 'database']
 ---
 
-# SQL Validator
-
 SQL parsing, validation and serialization.
 
 ```js

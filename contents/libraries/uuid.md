@@ -4,8 +4,6 @@ description: "UUID generation and inspection."
 keywords: ['carne', 'javascript', 'std', 'uuid']
 ---
 
-# UUID
-
 UUID generation (v1-v8) and inspection over openparser. Both call
 styles work: flat `uuid4()` (destructurable) and `v4()` methods.
 `parse`, `version`, `variant` and `isNil` throw on invalid input;

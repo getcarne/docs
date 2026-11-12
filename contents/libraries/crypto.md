@@ -4,8 +4,6 @@ description: "Hashing, AEAD sealing, signatures, passwords."
 keywords: ['carne', 'javascript', 'std', 'crypto', 'hash', 'signatures']
 ---
 
-# Crypto
-
 hashing, AEAD sealing, signatures, passwords
 
 ```js

@@ -4,8 +4,6 @@ description: "Unified diffs (Myers/patience/histogram)."
 keywords: ['carne', 'javascript', 'std', 'diff']
 ---
 
-# Diff
-
 Unified diffs (Myers/patience/histogram)
 
 ```js

@@ -4,8 +4,6 @@ description: "RSS and Atom feed parsing."
 keywords: ['carne', 'javascript', 'std', 'feed', 'rss', 'atom']
 ---
 
-# Feed
-
 RSS and Atom feed parsing and serialization.
 
 ```js

@@ -4,8 +4,6 @@ description: "CSV parsing."
 keywords: ['carne', 'javascript', 'std', 'csv']
 ---
 
-# CSV
-
 CSV parsing and serialization. With `headers: true` the first row becomes keys and the result is an
 array of objects.
 

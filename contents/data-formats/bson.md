@@ -4,8 +4,6 @@ description: "BSON parsing and serialization."
 keywords: ['carne', 'javascript', 'std', 'bson']
 ---
 
-# BSON
-
 BSON parsing and serialization. Raw BSON bytes travel with an opaque mapping (do not read the string
 as text); `stringify` output always parses back.
 

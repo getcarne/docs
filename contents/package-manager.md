@@ -4,8 +4,6 @@ description: "The Carne DFS package manager with one shared global store."
 keywords: ["carne", "package manager", "pkg", "packages", "npm"]
 ---
 
-# Package manager
-
 A DFS (depth-first search) package manager with one shared global store
 (`~/.carne`, no `node_modules`), built on
 [pkg/datpkgr](https://github.com/openpeeps/datpkgr). It installs from both git

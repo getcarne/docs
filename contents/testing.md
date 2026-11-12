@@ -4,8 +4,6 @@ description: "Write and run tests with carne test and the std/test module."
 keywords: ["carne", "test", "testing", "std/test", "expect", "assert"]
 ---
 
-# Testing
-
 Tests live in `tests/**/*.test.js` and run with `carne test`. The
 `std/test` module provides `test`/`it`, `describe`, `expect` matchers and a
 Node-style `assert` — no dependencies needed.

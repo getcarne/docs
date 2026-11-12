@@ -4,8 +4,6 @@ description: "QR code generation."
 keywords: ['carne', 'javascript', 'std', 'qr']
 ---
 
-# QR
-
 QR code generation (Model 2). Decoding is out of scope in v1.
 
 ```js

@@ -4,8 +4,6 @@ description: "Process info and environment variables."
 keywords: ['carne', 'javascript', 'std', 'env', 'process', 'environment']
 ---
 
-# Env
-
 ```js
 const env = require("std/env");
 console.log(env.args());            // e.g. ["carne", "app.js", "--port", "3000"]

@@ -4,8 +4,6 @@ description: "Async and sync WebSocket client and server."
 keywords: ['carne', 'javascript', 'std', 'ws', 'websocket']
 ---
 
-# WebSocket
-
 Async + sync WebSocket client and server, example:
 
 ```js

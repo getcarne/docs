@@ -4,8 +4,6 @@ description: "vCard contact parsing."
 keywords: ['carne', 'javascript', 'std', 'vcard', 'contacts']
 ---
 
-# vCard
-
 vCard contact parsing and serialization.
 
 ```js

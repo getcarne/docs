@@ -4,8 +4,6 @@ description: "General-purpose modules for Carne."
 keywords: ["carne", "libraries", "utilities"]
 ---
 
-# Libraries
-
 | Module | Description |
 |---|---|
 | [Env](libraries/env) | Process info and environment |

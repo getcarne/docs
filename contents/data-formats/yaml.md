@@ -4,8 +4,6 @@ description: "YAML parsing and serialization."
 keywords: ['carne', 'javascript', 'std', 'yaml']
 ---
 
-# YAML
-
 YAML parsing and serialization. Single-document in v1: trailing documents after `---` are ignored.
 
 ```js

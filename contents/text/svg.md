@@ -4,8 +4,6 @@ description: "SVG parsing."
 keywords: ['carne', 'javascript', 'std', 'svg']
 ---
 
-# SVG
-
 SVG parsing. Elements map to `{tag, attrs, children}` (same shape as `std/xml`);
 text, comments and CDATA become `{kind, text}` leaves. Serialization
 is out of scope in v1, pair with `std/xml` when you need to write SVG.

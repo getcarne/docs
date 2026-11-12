@@ -4,8 +4,6 @@ description: "Synchronous OS utilities: files, directories, processes."
 keywords: ['carne', 'javascript', 'std', 'os', 'filesystem', 'process']
 ---
 
-# OS
-
 File and dir access plus process helpers. Everything throws a JS
 Error on failure; `sleep` and `exec` block the loop.
 

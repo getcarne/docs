@@ -4,8 +4,6 @@ description: "Color parsing, formatting and math."
 keywords: ['carne', 'javascript', 'std', 'colors']
 ---
 
-# Colors
-
 Colors cross the boundary as `{r, g, b, a}` objects (`r`/`g`/`b` are 0..255
 integers, `a` is 0..1). Accepts hex, `rgb()`/`hsl()`/`hsv()`/`cmyk()`/
 `lab()`/`lch()`/`oklab()`/`oklch()` strings and named colors.

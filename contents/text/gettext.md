@@ -4,8 +4,6 @@ description: ".po parsing and translation."
 keywords: ['carne', 'javascript', 'std', 'gettext', 'i18n']
 ---
 
-# Gettext
-
 `.po` parsing and translation. Untranslated ids fall back to the msgid. `.mo` is out of scope in v1.
 
 ```js

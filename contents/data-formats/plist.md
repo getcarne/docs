@@ -4,8 +4,6 @@ description: "Apple property lists (XML and binary)."
 keywords: ['carne', 'javascript', 'std', 'plist', 'apple']
 ---
 
-# Plist
-
 ```js
 const plist = require("std/plist");
 const v = plist.parse('<plist version="1.0"><dict><key>Name</key><string>Ada</string></dict></plist>');

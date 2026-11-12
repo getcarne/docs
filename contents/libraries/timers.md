@@ -4,8 +4,6 @@ description: "Global timers: setTimeout, setInterval, clearTimeout, clearInterva
 keywords: ['carne', 'javascript', 'timers', 'setTimeout', 'setInterval']
 ---
 
-# Timers
-
 ```js
 setTimeout(() => console.log("later"), 100);          // -> numeric id
 const id = setInterval(() => console.log("tick"), 1000);

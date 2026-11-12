@@ -4,8 +4,6 @@ description: "Networking modules for Carne."
 keywords: ["carne", "networking", "http", "websocket"]
 ---
 
-# Networking
-
 | Module | Description |
 |---|---|
 | [HTTP Client](networking/http-client) | Async HTTP client |

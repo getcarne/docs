@@ -4,8 +4,6 @@ description: "MIME type lookup."
 keywords: ['carne', 'javascript', 'std', 'mimetype', 'mime']
 ---
 
-# Mimetype
-
 MIME type lookup over the `mimedb` database (bundled, parsed lazily on first query).
 Extensions accept a leading dot and any case; unknown inputs answer `null`.
 `info` returns `{source, extensions, compressible}`.

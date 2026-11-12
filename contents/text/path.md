@@ -4,8 +4,6 @@ description: "File-path and URL parsing."
 keywords: ['carne', 'javascript', 'std', 'path', 'url']
 ---
 
-# Path
-
 file-path and URL parsing. Parse-only in v1. Absent options stay absent.
 
 ```js

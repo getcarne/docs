@@ -4,8 +4,6 @@ description: "Install Carne from GitHub Releases or build from source."
 keywords: ["carne", "install", "installation", "releases", "build"]
 ---
 
-# Installation
-
 ## Prebuilt binaries
 
 Prebuilt binaries for macOS and Linux are published on
@@ -33,15 +31,18 @@ Requirements:
 - On Linux: `libjavascriptcoregtk-4.1-dev`
 
 ```bash
-git clone https://github.com/openpeeps/carne.git
-cd carne
-nimble install -Y
+nimble install carne
 ```
-
 Or with `clue`:
 
 ```bash
 clue install carne --build
+```
+
+Clone it, and build it via Nimble. then find the binary in `bin/carne`
+```bash
+git clone https://github.com/openpeeps/carne.git
+cd carne && nimble install -Y
 ```
 
 Verify the install:

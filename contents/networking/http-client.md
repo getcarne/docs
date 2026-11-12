@@ -4,8 +4,6 @@ description: "Async HTTP client for Carne."
 keywords: ['carne', 'javascript', 'std', 'http', 'client']
 ---
 
-# HTTP Client
-
 The HTTP client is fully async and Promise-based. All client methods
 return a Promise that resolves to `{status, statusText, headers, body}`.
 

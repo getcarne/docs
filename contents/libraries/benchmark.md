@@ -4,8 +4,6 @@ description: "In-process microbenchmarking."
 keywords: ['carne', 'javascript', 'std', 'benchmark']
 ---
 
-# Benchmark
-
 In-process microbenchmarking on Nim clocks. `measure` runs a sync function N times
 (plus discarded warmup) and returns wall stats in ms with `opsPerSec`, process
 `cpuMs`, peak `rssPeak` and Nim-heap `heapDelta`. `compare` ranks named functions

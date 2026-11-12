@@ -4,8 +4,6 @@ description: "TOML parsing and serialization."
 keywords: ['carne', 'javascript', 'std', 'toml']
 ---
 
-# TOML
-
 TOML parsing and serialization. TOML datetimes surface as strings (the literal as written).
 
 ```js

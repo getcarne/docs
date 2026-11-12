@@ -4,8 +4,6 @@ description: "CSS parsing and declaration validation."
 keywords: ['carne', 'javascript', 'std', 'css']
 ---
 
-# CSS
-
 CSS parsing, validation and serialization
 
 ```js

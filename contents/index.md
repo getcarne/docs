@@ -1,14 +1,12 @@
 ---
 title: Introduction
-description: "Carne is a JavaScript runtime based on JavaScriptCore and Nim, with a rich standard library so you do not need npm."
+description: "Carne is a JavaScript runtime based on JavaScriptCore and Nim, with a rich standard library, built-in package manager and more!"
 keywords: ["carne", "javascript", "runtime", "nim", "javascriptcore", "standard library"]
 ---
 
-# Carne
-
 A JavaScript runtime based on JavaScriptCore and [Nim](https://nim-lang.org). No drama, no overhype. With a rich standard library, so you do not need npm anymore. It ships with an efficient package manager that abolishes `node_modules` and keeps dependencies in one shared global store instead.
 
-This is not a drop-in replacement for Node.js, Bun or Deno. It is a runtime with an opinion: most scripts should not need a dependency at all. It trades the
+**This is not a drop-in replacement for Node.js, Bun or Deno. It is a runtime with an opinion**: most scripts should not need a dependency at all. It trades the
 npm ocean for a standard library that covers everyday work out of the box, starts
 in ~8 ms on the back of JavaScriptCore, and stays ~6k lines of Nim, small enough
 to read in an afternoon. If you want the Node ecosystem, keep Node. If you want a
@@ -66,8 +64,8 @@ releases, and a few modules are parse-only in v1. Scripts needing top-level
 
 ## ❤ Contributions & Support
 
-- Found a bug? [Create a new Issue](https://github.com/openpeeps/carne/issues)
-- Wanna help? [Fork it!](https://github.com/openpeeps/carne/fork)
+- Found a bug? [Create a new Issue](https://github.com/getcarne/carne/issues)
+- Wanna help? [Fork it!](https://github.com/getcarne/carne/fork)
 
 ## License
 

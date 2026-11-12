@@ -4,8 +4,6 @@ description: "HTML parsing and serialization."
 keywords: ['carne', 'javascript', 'std', 'html']
 ---
 
-# HTML
-
 HTML parsing and serialization. Elements map to `{tag, attrs, children}`
 (same shape as `std/xml`); text nodes are bare strings. Comments are
 dropped on parse.

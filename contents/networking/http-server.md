@@ -4,8 +4,6 @@ description: "Async HTTP server for Carne."
 keywords: ['carne', 'javascript', 'std', 'http', 'server']
 ---
 
-# HTTP Server
-
 Async HTTP server. Handlers return a string, a `{status?, headers?, body?}`
 object, or `undefined`; handler throws become 500s.
 

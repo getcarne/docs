@@ -4,8 +4,6 @@ description: "Text, markup and diff modules for Carne."
 keywords: ["carne", "text", "markup", "css", "diff"]
 ---
 
-# Text & Markup
-
 | Module | Description |
 |---|---|
 | [CSS](text/css) | CSS parsing and validation |

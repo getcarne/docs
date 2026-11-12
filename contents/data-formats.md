@@ -4,8 +4,6 @@ description: "Data format parsing and serialization modules for Carne."
 keywords: ["carne", "data formats", "parsing", "serialization"]
 ---
 
-# Data Formats
-
 | Module | Description |
 |---|---|
 | [YAML](data-formats/yaml) | YAML parsing and serialization |
