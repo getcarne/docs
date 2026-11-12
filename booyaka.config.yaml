@@ -7,7 +7,7 @@ theme: "default"
 metadata:
   title: "Carne JavaScript Runtime"
   url: getcarne.github.io/docs
-  logo: "/assets/carne.png"
+  logo: "/assets/carne_logo.png"
   description: "Documentation for Carne, a JavaScript runtime based on JavaScriptCore and Nim."
   keywords: ["carne", "javascript", "runtime", "nim", "documentation"]
 appearance:
@@ -18,9 +18,7 @@ appearance:
   default_theme: "system"
   show_toggle_left_sidebar: true
   show_toggle_right_sidebar: true
-  container_width: "col-lg-10 mx-auto"
-  content_width: "col-lg-7"
-  background_noise_opacity: 0.03
+  background_noise_opacity: 0.3
 git:
   enable_versioning: false
   enable_contributors_info: false
@@ -80,6 +78,8 @@ navbar:
     url: "/"
   - title: "Docs"
     url: "/docs"
+  - title: "GitHub Repository"
+    url: "https://github.com/getcarne/carne"
 
 sidebar_navigation:
   - name: "Getting Started"
