@@ -9,8 +9,24 @@ as text); `stringify` output always parses back.
 
 ```js
 const bson = require("std/bson");
-const blob = bson.stringify({name: "ada", n: 1});
-console.log(JSON.stringify(bson.parse(blob))); // {"name":"ada","n":1}
+
+const doc = {
+  hello: "world",
+  n: 42,
+  active: true,
+  nothing: null,
+  tags: ["a", "b"],
+  nested: {x: 1}
+};
+
+const blob = bson.stringify(doc);
+console.log("bytes: " + blob.length);
+
+const back = bson.parse(blob);
+for (const key of Object.keys(back)) {
+  console.log(key + " = " + JSON.stringify(back[key]));
+}
+console.log(JSON.stringify(back) === JSON.stringify(doc)); // true, roundtrip
 ```
 
 
@@ -20,7 +36,8 @@ console.log(JSON.stringify(bson.parse(blob))); // {"name":"ada","n":1}
 
 ```js
 const bson = require("std/bson");
-bson.parse("example");
+const back = bson.parse(blob); // blob above
+console.log(back.hello); // "world"
 ```
 
 ## bson.stringify
@@ -29,5 +46,5 @@ bson.parse("example");
 
 ```js
 const bson = require("std/bson");
-bson.stringify("example");
+console.log(typeof bson.stringify({n: 1})); // "string" (opaque bytes)
 ```

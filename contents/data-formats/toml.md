@@ -8,9 +8,30 @@ TOML parsing and serialization. TOML datetimes surface as strings (the literal a
 
 ```js
 const toml = require("std/toml");
-const cfg = toml.parse('[server]\nhost = "localhost"\nport = 3000\n');
-console.log(cfg.server.port); // 3000
-console.log(toml.stringify(cfg));
+
+const src = [
+  'title = "carne demo"',
+  'count = 3',
+  '',
+  '[server]',
+  'host = "localhost"',
+  'port = 3000',
+  '',
+  '[features]',
+  'list = ["logging", "metrics"]',
+  ''
+].join("\n");
+
+const cfg = toml.parse(src);
+console.log(cfg.server.host + ":" + cfg.server.port); // "localhost:3000"
+for (const key of Object.keys(cfg.server)) {
+  console.log("server." + key + " = " + cfg.server[key]);
+}
+for (const f of cfg.features.list) {
+  console.log("feature: " + f);
+}
+
+console.log(toml.stringify({app: {name: "carne", workers: 4}}));
 ```
 
 
@@ -20,7 +41,8 @@ console.log(toml.stringify(cfg));
 
 ```js
 const toml = require("std/toml");
-toml.parse("example");
+const cfg = toml.parse(src); // src above
+console.log(cfg.title); // "carne demo"
 ```
 
 ## toml.stringify
@@ -29,5 +51,5 @@ toml.parse("example");
 
 ```js
 const toml = require("std/toml");
-toml.stringify("example");
+console.log(toml.stringify(cfg)); // back to TOML text
 ```

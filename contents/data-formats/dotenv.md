@@ -4,31 +4,49 @@ description: ".env file parsing and loading."
 keywords: ['carne', 'javascript', 'std', 'dotenv', 'env']
 ---
 
-`.env` file parsing
+`.env` file parsing, exposed as `std/env` (there is no separate
+`std/dotenv` module). Values support `$VAR` expansion against earlier
+keys.
 
 ```js
-const dotenv = require("std/dotenv");
-console.log(dotenv.parse("PORT=3000\nHOST=localhost:$PORT\n"));
-// {PORT: "3000", HOST: "localhost:3000"} (variable expansion applied)
-dotenv.load();            // reads ./.env into process env (see std/env)
-dotenv.load(".env", true); // ...overwriting existing vars
+const env = require("std/env");
+
+const src = [
+  "PORT=3000",
+  "HOST=localhost:$PORT",
+  "DEBUG=true",
+  ""
+].join("\n");
+
+const cfg = env.parse(src);
+for (const key of Object.keys(cfg)) {
+  console.log(key + "=" + cfg[key]);
+}
+// PORT=3000
+// HOST=localhost:3000
+// DEBUG=true
+
+console.log(env.stringify({PORT: "3000", HOST: "localhost"}));
+env.load();            // reads ./.env into process env
+env.load(".env", true); // ...overwriting existing vars
 ```
 
 
 ## dotenv.parse
 
-`dotenv.parse(text) -> object (with variable expansion applied)`
+`env.parse(text) -> object (with variable expansion applied)`
 
 ```js
-const dotenv = require("std/dotenv");
-dotenv.parse("example");
+const env = require("std/env");
+const cfg = env.parse(src); // src above
+console.log(cfg.HOST); // "localhost:3000"
 ```
 
 ## dotenv.load
 
-`dotenv.load([path][, override]) -> undefined (writes into process env)`
+`env.load([path][, override]) -> undefined (writes into process env)`
 
 ```js
-const dotenv = require("std/dotenv");
-dotenv.load("/tmp/demo.txt", "example");
+const env = require("std/env");
+env.load("/tmp/demo.txt", true);
 ```

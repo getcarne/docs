@@ -4,11 +4,30 @@ description: "Apple property lists (XML and binary)."
 keywords: ['carne', 'javascript', 'std', 'plist', 'apple']
 ---
 
+Apple property lists: XML or binary in, XML out. Dictionaries become
+plain objects, arrays stay arrays.
+
 ```js
 const plist = require("std/plist");
-const v = plist.parse('<plist version="1.0"><dict><key>Name</key><string>Ada</string></dict></plist>');
-console.log(v.Name);          // "Ada" (XML or binary plist in)
-console.log(plist.stringify(v)); // XML plist out
+
+const src =
+  '<?xml version="1.0"?>' +
+  '<plist version="1.0"><dict>' +
+  '<key>CFBundleName</key><string>CarneDemo</string>' +
+  '<key>CFBundleVersion</key><string>3</string>' +
+  '<key>LSRequiresIPhoneOS</key><true/>' +
+  '<key>URLs</key><array><string>https://a.example</string>' +
+  '<string>https://b.example</string></array>' +
+  '</dict></plist>';
+
+const doc = plist.parse(src);
+console.log(doc.CFBundleName); // "CarneDemo"
+for (const url of doc.URLs) {
+  console.log("url: " + url);
+}
+
+const back = plist.parse(plist.stringify({answer: 42, ok: true}));
+console.log(back.answer); // 42, roundtrip
 ```
 
 
@@ -18,7 +37,8 @@ console.log(plist.stringify(v)); // XML plist out
 
 ```js
 const plist = require("std/plist");
-plist.parse("example");
+const doc = plist.parse(src); // src above
+console.log(doc.CFBundleVersion); // "3"
 ```
 
 ## plist.stringify
@@ -27,5 +47,5 @@ plist.parse("example");
 
 ```js
 const plist = require("std/plist");
-plist.stringify("example");
+console.log(plist.stringify({name: "CarneDemo"})); // XML plist out
 ```

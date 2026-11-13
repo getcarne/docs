@@ -10,9 +10,19 @@ dropped on parse.
 
 ```js
 const html = require("std/html");
-const doc = html.parse("<p>hi <b>ada</b></p>");
-console.log(html.innerText(doc)); // "hi ada"
-console.log(html.stringify(doc)); // "<p>hi<b>ada</b></p>"
+
+const doc = html.parse("<article><h1>Hi</h1><p>hello <b>ada</b> and <b>grace</b></p></article>");
+console.log(html.innerText(doc)); // "Hi hello ada and grace"
+
+for (const node of doc) {
+  if (typeof node === "string") continue;
+  console.log("top: " + node.tag); // "article"
+  for (const child of node.children) {
+    console.log("  child: " + (typeof child === "string" ? "(text) " + child : child.tag));
+  }
+}
+
+console.log(html.stringify(doc)); // same markup back
 console.log(html.isInline("br"), html.isBlock("div")); // true true
 ```
 
@@ -23,7 +33,10 @@ console.log(html.isInline("br"), html.isBlock("div")); // true true
 
 ```js
 const html = require("std/html");
-html.parse("example");
+const doc = html.parse("<p>hi <b>ada</b></p>");
+for (const node of doc[0].children) {
+  console.log(typeof node === "string" ? "text: " + node : "tag: " + node.tag);
+}
 ```
 
 ## html.stringify
@@ -35,7 +48,7 @@ Accepts a node, a text string, or an array of those; void elements
 
 ```js
 const html = require("std/html");
-html.stringify("example");
+console.log(html.stringify(doc)); // "<article>...</article>"
 ```
 
 ## html.innerText
@@ -44,7 +57,7 @@ html.stringify("example");
 
 ```js
 const html = require("std/html");
-html.innerText("example");
+console.log(html.innerText(doc)); // all text, tags stripped
 ```
 
 ## html.isInline
@@ -53,7 +66,7 @@ html.innerText("example");
 
 ```js
 const html = require("std/html");
-html.isInline("example");
+console.log(html.isInline("span"), html.isInline("div")); // true false
 ```
 
 ## html.isBlock
@@ -62,5 +75,5 @@ html.isInline("example");
 
 ```js
 const html = require("std/html");
-html.isBlock("example");
+console.log(html.isBlock("div"), html.isBlock("br")); // true false
 ```

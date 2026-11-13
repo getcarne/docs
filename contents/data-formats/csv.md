@@ -9,11 +9,29 @@ array of objects.
 
 ```js
 const csv = require("std/csv");
-console.log(csv.parse("a,b\n1,2\n"));                  // [["a","b"],["1","2"]]
-console.log(csv.parse("a,b\n1,2\n", {headers: true})); // [{a: "1", b: "2"}]
-csv.parse("a;b\n1;2\n", {delimiter: ";"});              // custom delimiter/quote
-console.log(csv.stringify([["a","b"],["1","2"]]));      // "a,b\n1,2"
-console.log(csv.stringify([{a: "1", b: "2"}]));         // "a,b\n1,2" (header row + rows)
+
+const text = [
+  "name,age,city",
+  "ada,36,London",
+  '"grace, h.",85,New York'
+].join("\n");
+
+const rows = csv.parse(text);
+console.log(rows.length); // 3 (header + 2 data rows)
+for (const row of rows.slice(1)) {
+  console.log(row[0] + " is " + row[1] + " from " + row[2]);
+}
+// ada is 36 from London
+// grace, h. is 85 from New York
+
+const people = csv.parse(text, {headers: true});
+for (const p of people) {
+  console.log(p.name + " -> " + p.city);
+}
+
+console.log(csv.stringify([["a", "b"], ["1", "2"]]));
+console.log(csv.stringify([{name: "ada", age: 36}, {name: "grace", age: 85}]));
+console.log(csv.parse("a;b\n1;2\n", {delimiter: ";"})); // custom delimiter
 ```
 
 
@@ -23,7 +41,10 @@ console.log(csv.stringify([{a: "1", b: "2"}]));         // "a,b\n1,2" (header ro
 
 ```js
 const csv = require("std/csv");
-csv.parse("example", {});
+const people = csv.parse(text, {headers: true}); // text above
+for (const p of people) {
+  console.log(p.name + " is " + p.age);
+}
 ```
 
 ## csv.stringify
@@ -37,5 +58,5 @@ quote, or a newline are quoted with doubled quotes.
 
 ```js
 const csv = require("std/csv");
-csv.stringify("example", {});
+console.log(csv.stringify(people)); // header row + one row per person
 ```
