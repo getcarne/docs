@@ -96,6 +96,8 @@ sidebar_navigation:
         url: "/gen-docs"
       - title: "Generate AST"
         url: "/gen-ast"
+      - title: "Native Addons"
+        url: "/native-addons"
   - name: "Networking"
     items:
       - title: "Overview"
