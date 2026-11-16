@@ -92,8 +92,8 @@ sidebar_navigation:
         url: "/package-manager"
       - title: "Testing"
         url: "/testing"
-      - title: "Generating"
-        url: "/generating"
+      - title: "Generate Docs"
+        url: "/gen-docs"
   - name: "Networking"
     items:
       - title: "Overview"
