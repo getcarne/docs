@@ -1,5 +1,5 @@
 ---
-title: Generating
+title: Generate Documentation
 description: "Generate API reference docs from JavaScript sources with carne gen docs."
 keywords: ["carne", "gen", "docs", "api reference", "jsdoc", "documentation"]
 ---

@@ -94,6 +94,8 @@ sidebar_navigation:
         url: "/testing"
       - title: "Generate Docs"
         url: "/gen-docs"
+      - title: "Generate AST"
+        url: "/gen-ast"
   - name: "Networking"
     items:
       - title: "Overview"
