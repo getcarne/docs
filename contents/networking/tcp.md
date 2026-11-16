@@ -10,11 +10,14 @@ payloads are UTF-8 strings in v1. Servers hold the loop alive until
 
 ```js
 const tcp = require("std/tcp");
-const srv = tcp.serve(9000, {onData: (c, m) => c.write("echo:" + m)});
-const c = await tcp.connect("127.0.0.1", 9000, {
-  onData: (m) => { console.log(m); c.close(); tcp.close(srv.port); }
-});
-c.write("hello"); // client gets "echo:hello"
+
+(async () => {
+  const srv = tcp.serve(9000, {onData: (c, m) => c.write("echo:" + m)});
+  const c = await tcp.connect("127.0.0.1", 9000, {
+    onData: (m) => { console.log(m); c.close(); tcp.close(srv.port); }
+  });
+  c.write("hello"); // client gets "echo:hello"
+})();
 ```
 
 
@@ -29,7 +32,15 @@ all optional: `onOpen(conn)`, `onData(conn, chunk)`, `onClose(conn)`,
 
 ```js
 const tcp = require("std/tcp");
-tcp.serve(9000, {onData: (c, m) => c.write("echo:" + m)});
+
+(async () => {
+  const srv = tcp.serve(19007, {onData: (c, m) => c.write("echo:" + m)});
+  console.log(srv.port);
+  const c = await tcp.connect("127.0.0.1", 19007, {
+    onData: (m) => { c.close(); tcp.close(srv.port); }
+  });
+  c.write("hello"); // server echoes
+})();
 ```
 
 ## tcp.connect
@@ -43,9 +54,15 @@ to `true` (set `false` for self-signed fixtures).
 
 ```js
 const tcp = require("std/tcp");
-const c = await tcp.connect("127.0.0.1", 9000, {
-  tls: true, rejectUnauthorized: false, onData: (m) => console.log(m)
-});
+
+(async () => {
+  const srv = tcp.serve(19008, {onData: (c, m) => c.write("echo:" + m)});
+  const c = await tcp.connect("127.0.0.1", 19008, {
+    tls: false, onData: (m) => { console.log(m); c.close(); tcp.close(srv.port); }
+  });
+  console.log("peer " + c.remoteAddress + ":" + c.remotePort);
+  c.write("hi");
+})();
 ```
 
 ## tcp.close
@@ -57,7 +74,9 @@ when nothing listens there. Safe inside a callback.
 
 ```js
 const tcp = require("std/tcp");
-tcp.close(9000);
+
+const srv = tcp.serve(19009, {});
+console.log("closed: " + tcp.close(srv.port)); // "closed: true"
 ```
 
 ## conn.write
@@ -68,7 +87,15 @@ Sends on the handle from `connect`/`serve`. Throws when the
 connection is closed (or pre-TLS-open).
 
 ```js
-c.write("hello");
+const tcp = require("std/tcp");
+
+(async () => {
+  const srv = tcp.serve(19003, {onData: (c, m) => c.write("echo:" + m)});
+  const c = await tcp.connect("127.0.0.1", 19003, {
+    onData: (m) => { console.log(m); c.close(); tcp.close(srv.port); }
+  });
+  console.log(c.write("hello")); // true, client gets "echo:hello"
+})();
 ```
 
 ## conn.close
@@ -77,3 +104,18 @@ c.write("hello");
 
 Final and idempotent; unknown handles are a no-op. Handles also carry
 `remoteAddress` and `remotePort` (server side: the peer).
+
+```js
+const tcp = require("std/tcp");
+
+(async () => {
+  const srv = tcp.serve(19004, {onData: (c, m) => {
+    console.log(c.remoteAddress + " sent " + m);
+    c.write("bye-ack");
+  }});
+  const c = await tcp.connect("127.0.0.1", 19004, {
+    onData: (m) => { console.log("client closed: " + c.close()); tcp.close(srv.port); }
+  });
+  c.write("bye");
+})();
+```
